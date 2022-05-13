@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #ccc;
+
+        
+        }
+
+        .cursor-border2 {
+            
+            border-image:url(border.png);
+            border-width: 50px;
+            border-style: solid
+        }
+        .cursor-border {
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            border-width: 50px;
+            border-style: solid;
+            border-image: url(border.png    );
+            border-image-slice: 10 10 10 10;
+            border-image-width: 20px 20px 20px 20px;
+            border-image-outset: 0px 0px 0px 0px;
+            border-image-repeat: stretch stretch;
+}
+        #diamond-narrow {
+            width: 0;
+            height: 0;
+            border: 30px solid transparent;
+            border-bottom: 70px solid red;
+            position: relative;
+            top: -40px;
+            }
+            
+        .ball {
+            border-radius: 50%;
+            background-color: #0000ff;
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            animation-name: changing-colors;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        .wrapper {
+            position: absolute;
+            
+            perspective: 150px;
+        }
+
+        .wrapper-2{
+            position: absolute;
+            top: 50%;
+            left: 40%;
+        }
+
+        .one {
+            top: 50%;
+            left: 40%;
+        }
+
+        .two {
+            top: 50%;
+            left: 45%;
+        }
+
+        .three {
+            top: 50%;
+            left: 50%;
+        }
+
+        .four {
+            top: 50%;
+            left: 55%;
+        }
+        .one-ball {
+            top: 40%;
+            left: 38.7%;
+        }
+
+        .two-ball {
+            top: 40%;
+            left: 43.7%;
+        }
+
+        .three-ball {
+            top: 40%;
+            left: 48.7%;
+        }
+
+        .four-ball {
+            top: 40%;
+            left: 53.7%;
+        }
+        .box-area {
+            position: relative;
+            transform-style: preserve-3d;
+            animation-name: rotate;
+            animation-duration: 30s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes rotate {
+            0%{
+                transform: rotate3d(0,0,0,0);
+            }
+            100%{
+                transform: rotate3d(0,1,0,360deg);
+            }
+        }
+
+            @keyframes changing-colors {
+                0%   {background-color: red;}
+                35%  {background-color: rgb(255, 76, 5);}                
+            }
+        .box {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+        }
+
+        .box-2 {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+            border-bottom: 45px solid red;
+            position: relative;
+
+        }
+
+        .box-3 {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+            border-top: 45px solid red;
+            position: relative;
+
+        }
+
+        .box-front {
+            transform: translateX(-20px) translateY(-20px) translateZ(20px);
+            background-color: red;
+            animation-name: changing-colors;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        .box-back {
+            transform: translateX(-20px) translateY(-20px) translateZ(-20px);
+            background-color: red;
+            animation-name: changing-colors;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        .box-right {
+            transform: translateY(-20px) rotateY(90deg);
+            background-color: red;
+            animation-name: changing-colors;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            }
+        .box-left {
+            transform: translateY(-20px) translateX(-40px) rotateY(90deg);
+            background-color: red;
+            animation-name: changing-colors;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .box-left-2 {
+            transform: translateY(0px) translateX(0px) rotateY(90deg) rotateX(-19deg);
+            border-bottom: 45px solid red;
+        }
+        .box-right-2 {
+            transform: translateY(-60px) translateX(19px)  rotateY(90deg) rotateX(20deg);
+            border-bottom: 45px solid red;
+        }
+        .box-front-2 {
+            transform: translateY(-115px) translateX(10px) rotateX(20deg) translateZ(12px);
+            border-bottom: 45px solid red;
+        }
+        .box-back-2 {
+            transform: translateY(-175px) translateX(10px) rotateX(-20deg) translateZ(-12px);
+        }
+
+
+        .box-left-bottom {
+            transform: translateY(-246px) translateX(1px) rotateY(-90deg) rotateX(-20deg);
+            border-top: 90px solid red;
+
+        }
+        .box-right-bottom {
+            transform: translateY(-370px) translateX(20px)  rotateY(90deg) rotateX(-19deg);
+            border-top: 90px solid red;
+
+        }
+        .box-front-bottom {
+            transform: translateY(-490px) translateX(10px) rotateX(-20deg) translateZ(10px);
+            border-top: 90px solid red;
+
+        }
+        .box-back-bottom {
+            transform: translateY(-610px) translateX(10px) rotateX(20deg) translateZ(-12px);
+
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="cursor-border"></div>
+    <div class="ball one-ball"></div>
+    <div class="ball two-ball"></div>
+    <div class="ball three-ball"></div>
+    <div class="ball four-ball"></div>
+    <div class="wrapper one cursor-border">
+        <div class="box-area">
+            <div class="box box-front"></div>
+            <div class="box box-right"></div>
+            <div class="box box-back"></div>
+            <div class="box box-left"></div>
+        </div>
+    </div>
+    <div class="wrapper two">
+        <div class="box-area">
+            <div class="box box-front"></div>
+            <div class="box box-right"></div>
+            <div class="box box-back"></div>
+            <div class="box box-left"></div>
+        </div>
+    </div>
+    <div class="wrapper three">
+        <div class="box-area">
+            <div class="box box-front"></div>
+            <div class="box box-right"></div>
+            <div class="box box-back"></div>
+            <div class="box box-left"></div>
+        </div>
+    </div>
+    <div class="wrapper four">
+        <div class="box-area">
+            <div class="box box-front"></div>
+            <div class="box box-right"></div>
+            <div class="box box-back"></div>
+            <div class="box box-left"></div>
+            
+        </div>
+    </div>
+    <div class="wrapper-2">
+        <div class="box-area">
+            <div class="box-2 box-left-2"></div>
+            <div class="box-2 box-right-2"></div>
+            <div class="box-2 box-front-2"></div>
+            <div class="box-2 box-back-2"></div>
+        </div>
+    </div> 
+    
+    <div class="wrapper-2 two">
+        <div class="box-area">
+            <div class="box-2 box-left-2"></div>
+            <div class="box-2 box-right-2"></div>
+            <div class="box-2 box-front-2"></div>
+            <div class="box-2 box-back-2"></div>
+            
+            <div class="box-3 box-left-bottom"></div>
+            <div class="box-3 box-right-bottom "></div>
+            <div class="box-3 box-front-bottom"></div>
+            <div class="box-3 box-back-bottom"></div>
+            
+        </div>
+    </div>
+
+    <div class="wrapper-2 two">
+        <div class="box-area">
+            
+        </div>
+    </div>
+    
+            
+    
+    <div id="diamond-narrow"></div>
+    
+</body>
+</html>

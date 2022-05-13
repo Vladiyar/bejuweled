@@ -1,0 +1,277 @@
+.shuffle {
+    left: 120px !important;
+    top: 65px !important;
+    transition: top 1s ease-in-out 1s, left 1s ease-in-out 1s !important;
+}
+
+.wrapper-bg {
+    background-image: url(images/grid.png);
+    background-position: center;
+    background-size: 120%;
+}
+
+.posible-turn {
+    
+    animation: changing-colors;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    outline: 5px dashed rgba(255, 0, 212, 0.1);
+}
+
+.cursor-border {
+    border-width: 4px;
+    border-style: solid;
+    border-image: url(border.png);
+    border-image-slice: 10 10 10 10;
+    border-image-width: 5px 5px 5px 5px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: stretch stretch;
+}
+
+.ball {
+    border-radius: 50%;
+    background: rgb(0,212,255);
+    background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(8,34,137,1) 86%, rgba(10,10,128,1) 100%);    height: 55px;
+    width: 55px;
+    position: absolute;
+
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    pointer-events: none;
+    top: 2.5px;
+    left: 2.5px;
+}
+
+
+
+.ball-green {
+    border-radius: 50%;
+    background-color: #00e1ff;
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    pointer-events: none;
+    top: 2.5px;
+    left: 2.5px;
+}
+
+.ball-yellow {
+    border-radius: 50%;
+    background: rgb(247, 255, 134);
+    background: radial-gradient(circle, rgba(247, 255, 134) 0%, rgb(149, 147, 13) 86%, rgb(92, 79, 5) 100%);    height: 55px;
+    background-color: #eeff00;
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    pointer-events: none;
+    top: 2.5px;
+    left: 2.5px;
+}
+.ball-orange {
+    border-radius: 50%;
+    background-color: #ff9100;
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    pointer-events: none;
+    top: 2.5px;
+    left: 2.5px;
+}
+.ball-pink {
+    border-radius: 50%;
+    background: rgb(255, 0, 212);
+    background: radial-gradient(circle, rgba(255, 0, 212) 0%, rgb(111, 8, 137) 86%, rgb(128, 10, 118) 100%);    height: 55px;
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    pointer-events: none;
+    top: 2.5px;
+    left: 2.5px;
+}
+.ball-purple{
+    border-radius: 50%;
+    background: rgb(140, 0, 255);
+    background: radial-gradient(circle, rgba(140, 0, 255) 0%, rgb(75, 8, 137) 86%, rgb(71, 10, 128) 100%);    height: 55px;
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    pointer-events: none;
+    top: 2.5px;
+    left: 2.5px;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate3d(0,0,0,0);
+    }
+    100%{
+        transform: rotate3d(0,1,0,360deg);
+    }
+}
+
+@keyframes changing-colors {      
+    50%  {outline: 5px dashed rgba(255, 0, 212, 1);}               
+}
+
+
+.wrapper {
+    position: absolute;
+    perspective: 150px;   
+}
+
+.wrapper-2 {
+    position: absolute;
+    
+}
+
+.box {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+
+}
+
+.box-2 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-bottom: 50px solid red;
+    position: relative;
+
+}
+
+.box-3 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+    border-bottom: 30px solid red;
+    position: relative;
+
+}
+
+.box-4 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 30px solid transparent;
+    border-top: 60px solid red;
+    position: relative;
+
+}
+
+.box-area {
+    top: 30px;
+    left: 30px;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation-name: rotate;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    pointer-events: none;
+}
+
+.box-area-2 {
+    left: 10px;
+    top: -100px;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation-name: rotate;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    pointer-events: none;
+}
+
+.box-area-3 {
+    left: 0px;
+    top: -10px;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation-name: rotate;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    pointer-events: none;
+}
+
+.box-front {
+    transform: translateX(-20px) translateY(-20px) translateZ(20px);
+    background-color: rgb(0, 255, 115);
+
+}
+.box-back {
+    transform: translateX(-20px) translateY(-20px) translateZ(-20px);
+    background-color: rgb(25, 189, 134);
+
+}
+.box-right {
+    transform: translateY(-20px) rotateY(90deg);
+    background-color: rgb(21, 255, 0);
+
+    }
+.box-left {
+    transform: translateY(-20px) translateX(-40px) rotateY(90deg);
+    background-color: rgb(0, 255, 149);
+
+}
+
+
+
+
+.box-left-2 {
+    transform: translateY(-124px) translateX(-5.8px) rotateY(90deg) rotateX(-23deg);
+    border-bottom: 50px solid rgb(218, 11, 11);
+}
+.box-right-2 {
+    transform: translateY(-54px) translateX(6px)  rotateY(90deg) rotateX(23deg);
+    border-bottom: 50px solid rgb(119, 11, 11);
+}
+.box-front-2 {
+    transform: translateY(89px) translateX(0px) rotateX(23deg) translateZ(7px);
+    border-bottom: 50px solid rgb(85, 11, 11);
+}
+.box-back-2 {
+    transform: translateY(19px) translateX(0px) rotateX(-23deg) translateZ(-7px);
+}
+
+
+
+.box-left-3 {
+    transform: translateY(-137.5px) translateX(-9.5px) rotateY(90deg) rotateX(-30deg);
+    border-bottom: 30px solid rgb(0, 0, 0);
+}
+.box-right-3 {
+    transform: translateY(-92.5px) translateX(0px)  rotateY(90deg) rotateX(30deg);
+    border-bottom: 30px solid rgb(119, 11, 11);
+}
+.box-front-3 {
+    transform: translateY(0px) translateX(0px) rotateX(30deg) translateZ(5px);
+    border-bottom: 30px solid rgb(179, 136, 136);
+}
+.box-back-3 {
+    transform: translateY(-45px) translateX(0px) rotateX(-30deg) translateZ(-5px);
+}
+
+
+.box-left-bottom {
+    transform: translateY(-210px) translateX(0px) rotateY(-90deg) rotateX(-20deg);
+    border-top: 30px solid red;
+
+}
+.box-right-bottom {
+    transform: translateY(-175px) translateX(0px)  rotateY(90deg) rotateX(-19deg);
+    border-top: 30px solid red;
+
+}
+.box-front-bottom {
+    transform: translateY(-110px) translateX(0px) rotateX(-20deg) translateZ(10px);
+    border-top: 30px solid red;
+
+}
+.box-back-bottom {
+    transform: translateY(-145px) translateX(0px) rotateX(20deg) translateZ(-12px);
+
+}
